@@ -30,8 +30,7 @@ Installation
     - `node service.js`
     - Click yes to all window pop-ups. 
         - If the installation of the web service is successful, you can find `Express WebAPI` under Window Service. (By default, it is started.) 
-![image](https://github.com/oxford-pharmacoepi/database_connection_dashboard/assets/114593559/542f9253-40ce-4b29-b07a-d82b8de006c7)
-
+![image](https://github.com/oxford-pharmacoepi/database_connection_dashboard/assets/114593559/0a1ee321-d80a-4082-b079-750a466f8dae)
        
 ## Part B - Deploy Web App in Tomcat Server
 * Update and save `config.js` under /webapp/database_connection_dashboard
