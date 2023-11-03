@@ -9,7 +9,7 @@
       content="Web site created using create-react-app"
     />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="config" href="%PUBLIC_URL%/config.json" />
+    <link rel="prefetch" href="%PUBLIC_URL%/config.json" />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -19,10 +19,16 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Database Connection Dashboard</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!-- Set the Web title -->
+    <script>
+      fetch('%PUBLIC_URL%/config.json')
+        .then((response) => response.json())
+        .then((json) => document.title =json.title);
+    </script>
     <div id="root"></div>
     <!--
       This HTML file is a template.
