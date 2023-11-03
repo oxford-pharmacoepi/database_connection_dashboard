@@ -12,7 +12,7 @@ Prerequisite
 Installation
 ============
 ## Part A - Web Service
-* Update the configuration, `.env` file under /webapi
+* Update and save the configuration, `.env` file under /webapi
   ```
     DATABASE_HOST=""
     DATABASE="postgres"
@@ -22,19 +22,19 @@ Installation
     PORT=
     MAX_CONNECTION=20          //Max number of requests allowed to call the web service per minute
   ```
-* Update `<project_root>` in /webapi/service.js
+* Update and save `<project_root>` in /webapi/service.js
 * Install all npm required by running the following commands in cmd
     - `cd <project_root>/webapi`
     -  `npm install`
 * Install web service as window service by running the following command in cmd
     - `node service.js`
     - Click yes to all window pop-ups. 
-        - If the installation of the web service is successful, you can find it under Window Service. (By default, it is started.) 
-![image](https://github.com/oxford-pharmacoepi/database_connection_dashboard/assets/114593559/0d08b57e-a668-4b3e-9d98-78eda14472cf)
+        - If the installation of the web service is successful, you can find `Express WebAPI` under Window Service. (By default, it is started.) 
+![image](https://github.com/oxford-pharmacoepi/database_connection_dashboard/assets/114593559/542f9253-40ce-4b29-b07a-d82b8de006c7)
 
        
 ## Part B - Deploy Web App in Tomcat Server
-* Update `config.js` under \database_connection_dashboard
+* Update and save `config.js` under /webapp/database_connection_dashboard
   ```
   {
       "webapi_url": "<the link of your Web server>",
@@ -49,9 +49,25 @@ Installation
 
 Update Configuration after Deployment
 ============
+## Case 1: Update Web App ONLY (!!!No need to stop web service!!!)
 * stop tomcat
-* stop window service
-* update `.env` file under /webapi
-* update /database_connection_dashboard/`config.js` in Tomcat webapps folder if needed
-* start window service
+* update and save /database_connection_dashboard/`config.js` in Tomcat webapps folder, <tomcat_root>/webapps
 * start tomcat
+
+## Case 2: Update Web Service 
+* stop tomcat or undeploy web app `database_connection_dashboard`
+* stop window service, `Express WebAPI`
+* update and save `.env` file under <project_root>/webapi
+* start window service, `Express WebAPI`
+* start tomcat
+
+Uninstall Web Service
+============
+* Update and save `<project_root>` in /webapi/uninstall-service.js
+* (Skip this steps if you already installed all required npm) Install all npm required by running the following commands in cmd 
+    - `cd <project_root>/webapi`
+    -  `npm install`
+* Uninstall web service in window service by running the following command in cmd
+    - `node uninstall-service.js`
+    - Click yes to all window pop-ups. 
+        - If the uninstallation is successful, `Express WebAPI` will been removed under Window Service.
