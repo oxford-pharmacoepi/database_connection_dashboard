@@ -62,6 +62,7 @@ Update Configuration after Deployment
 
 Uninstall Web Service
 ============
+!!! Undeploy the Web App first !!!
 * Update and save `<project_root>` in /webapi/uninstall-service.js
 * (Skip this steps if you already installed all required npm) Install all npm required by running the following commands in cmd 
     - `cd <project_root>/webapi`
