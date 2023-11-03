@@ -1,0 +1,6 @@
+{
+    "webapi_url": "http://127.0.0.1:5000",
+    "title": "OHDSI Server - Postgresql Connection Dashboard",
+    "tooltips_msg": "Apply multiple filters seperated by space. e.g., cdm_gold_202301 active"
+  }
+  
